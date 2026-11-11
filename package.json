@@ -1,0 +1,26 @@
+{
+  "name": "disasterdispatch",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/api",
+    "packages/web"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=packages/api\" \"npm run dev --workspace=packages/web\"",
+    "build": "npm run build --workspace=packages/api && npm run build --workspace=packages/web",
+    "lint": "eslint \"packages/api/src\" \"packages/web/src\" --ext .ts,.tsx",
+    "migrate": "npm run migrate --workspace=packages/api",
+    "seed": "npm run seed --workspace=packages/api"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  }
+}
