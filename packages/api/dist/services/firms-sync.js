@@ -119,8 +119,9 @@ const patchZoneSchema = {
 export async function dangerZonesRoutes(app) {
     // Admin key guard
     app.addHook('onRequest', async (request, reply) => {
+        const expectedKey = process.env['ADMIN_API_KEY'];
         const key = request.headers['x-api-key'];
-        if (key !== process.env['ADMIN_API_KEY']) {
+        if (!expectedKey || key !== expectedKey) {
             return reply.status(401).send({ error: 'Unauthorized' });
         }
     });

@@ -56,15 +56,15 @@ Track progress in [`PLAN.md`](./PLAN.md) — this is the single source of truth 
 
 | # | Sub-Task | Status |
 |---|---|---|
-| 1 | Project Scaffold & Monorepo Structure | ⬜ pending |
-| 2 | Database Schema & Migrations | ⬜ pending |
-| 3 | Core API: Resident & Driver Registration | ⬜ pending |
-| 4 | Disaster Zone Ingestion (NASA FIRMS + Admin Override) | ⬜ pending |
-| 5 | Alert Engine (Risk Assessment & SMS Dispatch) | ⬜ pending |
-| 6 | Transport Queue & Driver Dispatch Engine | ⬜ pending |
-| 7 | Heatmap API & Server-Sent Events | ⬜ pending |
-| 8 | Frontend: Public Heatmap & Registration Pages | ⬜ pending |
-| 9 | Admin SMS Simulation UI | ⬜ pending |
+| 1 | Project Scaffold & Monorepo Structure | ✅ done |
+| 2 | Database Schema & Migrations | ✅ done |
+| 3 | Core API: Resident & Driver Registration | ✅ done |
+| 4 | Disaster Zone Ingestion (NASA FIRMS + Admin Override) | ✅ done |
+| 5 | Alert Engine (Risk Assessment & SMS Dispatch) | ✅ done |
+| 6 | Transport Queue & Driver Dispatch Engine | ✅ done |
+| 7 | Heatmap API & Server-Sent Events | ✅ done |
+| 8 | Frontend: Public Heatmap & Registration Pages | ✅ done |
+| 9 | Driver View & Resident Communications | ✅ done |
 
 > Update this table and the checkboxes in `PLAN.md` as sub-tasks are completed.
 
@@ -105,7 +105,7 @@ npm run dev
 
 - API: http://localhost:3000
 - Frontend (heatmap): http://localhost:5173
-- SMS simulator (dev tool): http://localhost:5173/admin/simulate
+- Driver view: http://localhost:5173/driver
 
 ---
 
@@ -137,7 +137,7 @@ disasterdispatch/
 │   │       └── server.ts     # Entry point
 │   └── web/                  # React frontend
 │       └── src/
-│           ├── pages/        # Heatmap, registration, admin simulate
+│           ├── pages/        # Heatmap, registration, driver view
 │           └── hooks/        # useHeatmapStream SSE hook
 ├── docker-compose.yml        # Local PostgreSQL + PostGIS
 ├── .env.example              # All required env vars documented
